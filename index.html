@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <!-- css -->
+  <link rel="stylesheet" href="./css/app.css">
+  <link rel="stylesheet" href="./css/grid.css">
+  <title>Covid Tracker</title>
+</head>
+<body class="loading">
+  <!-- navbar start -->
+  <div class="nav-wrapper">
+    <div class="container">
+      <div class="nav">
+        <a href="" class="logo">
+          C<i class="bx bxs-virus-block bx-tada"></i>VID TRACKER
+        </a>
+        <div class="darkmode-switch" id="darkmode-switch">
+          <span>
+            <i class="bx bxs-moon"></i>
+            <i class="bx bxs-sun"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- navbar end -->
+
+  <!-- main content start -->
+  <div class="content">
+    <div class="container">
+      <!-- country selector start -->
+      <div class="row">
+        <div class="col-3 col-md-6 col-sm-12">
+          <div class="box">
+            <div class="country-select" id="country-select">
+              <div class="country-select-toggle" id="country-select-toggle">
+                <span>
+                  Global
+                </span>
+                <i class="bx bx-chevron-down"></i>
+              </div>
+              <div class="country-select-list" id="country-select-list">
+                <input type="text" placeholder="Search country name">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- country selector end -->
+
+      <!-- tracking information start -->
+      <div class="row">
+        <!-- left content start -->
+        <div class="col-8 col-md-12 col-sm-12">
+          <div class="row">
+            <!-- counter start -->
+            <div class="col-4 col-md-4 col-sm-12">
+              <div class="box box-hover">
+                <div class="count count-confirmed">
+                  <div class="count-icon">
+                    <i class="bx bxs-virus"></i>
+                  </div>
+                  <div class="count-info">
+                    <h5 id="confirmed-total">123,456,789</h5>
+                    <span>confirmés</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- counter end -->
+            <!-- counter start -->
+            <div class="col-4 col-md-4 col-sm-12">
+              <div class="box box-hover">
+                <div class="count count-recovered">
+                  <div class="count-icon">
+                    <i class="bx bxs-smile"></i>
+                  </div>
+                  <div class="count-info">
+                    <h5 id="recovered-total">123,456,789</h5>
+                    <span>guéris</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- counter end -->
+            <!-- counter start -->
+            <div class="col-4 col-md-4 col-sm-12">
+              <div class="box box-hover">
+                <div class="count count-deaths">
+                  <div class="count-icon">
+                    <i class="bx bxs-sad"></i>
+                  </div>
+                  <div class="count-info">
+                    <h5 id="deaths-total">123,456,789</h5>
+                    <span>décédés</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- counter end -->
+
+            <!-- all time chart start -->
+            <div class="col-12">
+              <div class="box">
+                <div class="box-header">
+                  Depuis le début
+                </div>
+                <div class="box-body">
+                  <div id="all-time-chart"></div>
+                </div>
+              </div>
+            </div>
+            <!-- all time chart end -->
+
+            <!-- embed video start -->
+            <div class="col-6 col-md-6 col-sm-12">
+              <div class="box">
+                <div class="box-header">
+                  qu'est ce que le covid-19
+                </div>
+                <div class="box-body">
+                  <iframe width="100%" height="315" src="https://www.youtube.com/embed/OZcRD9fV7jo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+            <!-- embed video end -->
+
+            <!-- embed video start -->
+            <div class="col-6 col-md-6 col-sm-12">
+              <div class="box">
+                <div class="box-header">
+                  Comment vous en protéger
+                </div>
+                <div class="box-body">
+                  <iframe width="100%" height="315" src="https://www.youtube.com/embed/oItObodPlJo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+            <!-- embed video end -->
+          </div>
+        </div>
+        <!-- left content end -->
+
+        <!-- right content start -->
+        <div class="col-4 col-md-12 col-sm-12">
+          <!-- 30 days chart start -->
+          <div class="box">
+            <div class="box-header">
+              30 derniers jours
+            </div>
+            <div class="box-body">
+              <div id="days-chart"></div>
+            </div>
+          </div>
+          <!-- 30 days chart end -->
+
+          <!-- recovery rate chart start -->
+          <div class="box">
+            <div class="box-header">
+              taux de guérison
+            </div>
+            <div class="box-body">
+              <div id="recovery-rate-chart"></div>
+            </div>
+          </div>
+          <!-- recovery rate chart end -->
+
+          <!-- top country affected start -->
+          <div class="box">
+            <div class="box-header">
+              classement des pays
+            </div>
+            <div class="box-body">
+              <table class="table-countries" id="table-countries">
+                <thead>
+                  <tr>
+                    <th>Pays</th>
+                    <th>Confirmés</th>
+                    <th>Guéris</th>
+                    <th>Décédés</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- top country affected end -->
+        </div>
+        <!-- right content end -->
+
+      </div>
+      <!-- tracking information end -->
+
+
+    </div>
+  </div>
+  <!-- main content end -->
+
+  <!-- footer start -->
+  <div class="footer">
+    Source venant de <a href="https://covid19api.com/" target="_blank">api.covid19api.com</a>
+    <p><a href="https://xavierfroment.github.io/cv-react/#/" target="_blank" >Xavier FROMENT</a> | <span>Inspiré de <a href="https://www.youtube.com/channel/UCnNgtK4tGlWcceXVzoyTg8Q" target="_blank">Tuat Tran Anh</a></span></p>
+  </div>
+  <!-- footer end -->
+  <div class="loader">
+    <i class="bx bxs-virus bx-spin"></i>
+  </div>
+  <!-- loader start -->
+
+  <!-- loader end -->
+
+  <!-- apexcart -->
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <!-- javascript -->
+  <script src="./js/fetchApi.js"></script>
+  <script src="./js/covidApi.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
